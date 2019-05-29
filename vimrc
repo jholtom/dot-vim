@@ -44,7 +44,6 @@ let g:airline_enable_syntastic  = 1
 set laststatus=2
 set background=dark
 set t_Co=256
-colorscheme MountainDew
 let g:SimpylFold_fold_import = 0
 
 let g:syntastic_always_populate_loc_list = 1
