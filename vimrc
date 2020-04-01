@@ -1,4 +1,31 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'godlygeek/tabular.git'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-obsession'
+Plugin 'sheerun/vim-polyglot'
+
+call vundle#end()
 syntax on
 filetype plugin indent on
 let mapleader = ","
