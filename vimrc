@@ -24,6 +24,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-obsession'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'Rykka/riv.vim'
+Plugin 'shime/vim-livedown'
 
 call vundle#end()
 syntax on
@@ -105,3 +107,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+map <leader>lp :LivedownPreview<CR>
+map <leader>lk :LivedownKill<CR>
+map <leader>lt :LivedownToggle<CR>
