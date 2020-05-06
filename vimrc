@@ -1,33 +1,32 @@
-set nocompatible
-filetype off
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'tmhedberg/SimpylFold'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-syntastic/syntastic'
+Plug 'godlygeek/tabular.git'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'rhysd/vim-clang-format'
+Plug 'flazz/vim-colorschemes'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-obsession'
+Plug 'sheerun/vim-polyglot'
+Plug 'Rykka/riv.vim'
+Plug 'shime/vim-livedown'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'godlygeek/tabular.git'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-obsession'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'Rykka/riv.vim'
-Plugin 'shime/vim-livedown'
-
-call vundle#end()
+call plug#end()
 syntax on
 filetype plugin indent on
 let mapleader = ","
@@ -111,3 +110,6 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 map <leader>lp :LivedownPreview<CR>
 map <leader>lk :LivedownKill<CR>
 map <leader>lt :LivedownToggle<CR>
+
+map <leader>ga :Git add .<CR>
+map <leader>gc :Git commit<CR>
