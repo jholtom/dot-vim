@@ -19,15 +19,19 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rhysd/vim-clang-format'
 Plug 'flazz/vim-colorschemes'
 Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
 Plug 'tpope/vim-obsession'
 Plug 'sheerun/vim-polyglot'
 Plug 'Rykka/riv.vim'
 Plug 'shime/vim-livedown'
+Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 
 call plug#end()
 syntax on
 filetype plugin indent on
+" was OceanicNext
+colorscheme nord
 let mapleader = ","
 let maplocalleader = ","
 set number
@@ -79,8 +83,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+autocmd FileType markdown setlocal shiftwidth=2  softtabstop=2 expandtab
+
+let g:vim_markdown_toc_autofit = 1
+set conceallevel=2
+let g:vim_markdown_math = 1
+
 map <C-n> :NERDTreeToggle<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gc :Gcommit<CR>
